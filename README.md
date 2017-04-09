@@ -6,4 +6,6 @@ Just a skeleton, not very interesting. Of course you will need `rustc` and `carg
 ```
 $ gem build rhust.gemspec
 $ gem install ./rhust-VERSION.gem
+$ ruby a.rb
+42
 ```

@@ -1,0 +1,11 @@
+[package]
+name = "rhust"
+version = "0.1.0"
+authors = ["Cosmia Fu"]
+
+[dependencies]
+libc = "*"
+ruru = "*"
+
+[lib]
+crate-type = ["dylib"]

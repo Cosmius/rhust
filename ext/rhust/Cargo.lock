@@ -1,0 +1,39 @@
+[root]
+name = "rhust"
+version = "0.1.0"
+dependencies = [
+ "ruru 0.9.3 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "lazy_static"
+version = "0.2.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "libc"
+version = "0.2.21"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "ruby-sys"
+version = "0.2.20"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "libc 0.2.21 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "ruru"
+version = "0.9.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "lazy_static 0.2.6 (registry+https://github.com/rust-lang/crates.io-index)",
+ "ruby-sys 0.2.20 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[metadata]
+"checksum lazy_static 0.2.6 (registry+https://github.com/rust-lang/crates.io-index)" = "2f61b8421c7a4648c391611625d56fdd5c7567da05af1be655fd8cacc643abb3"
+"checksum libc 0.2.21 (registry+https://github.com/rust-lang/crates.io-index)" = "88ee81885f9f04bff991e306fea7c1c60a5f0f9e409e99f6b40e3311a3363135"
+"checksum ruby-sys 0.2.20 (registry+https://github.com/rust-lang/crates.io-index)" = "e71509f17ce93733dc196258e168b58050490a156b04563816a8120a74ba04c7"
+"checksum ruru 0.9.3 (registry+https://github.com/rust-lang/crates.io-index)" = "6486d6c50b7a08246a492a61893635c1977d41c138041d443eb603f6298e0273"

@@ -1,2 +1,9 @@
+# dirs
+target/
+tmp/
+
+# native
+*.so
+
 # ruby
 *.gem

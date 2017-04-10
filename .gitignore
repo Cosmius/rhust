@@ -7,3 +7,4 @@ tmp/
 
 # ruby
 *.gem
+Gemfile.lock

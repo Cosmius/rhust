@@ -2,6 +2,7 @@
 name = "rhust"
 version = "0.1.0"
 dependencies = [
+ "lazy_static 0.2.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "ruru 0.9.3 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 

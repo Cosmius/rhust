@@ -1,3 +1,7 @@
-require 'rhust'
+require "bundler/setup"
+require "rhust"
 
-puts Rhust.val
+r = Rhust::Rhust.new
+puts r.get
+r.incr
+puts r.get

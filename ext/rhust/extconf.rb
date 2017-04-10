@@ -1,5 +1,5 @@
-require 'mkmf'
-require 'find'
+require "mkmf"
+require "find"
 
 module MakeMakefile
   def create_makefile2(target, srcprefix = nil)
@@ -27,6 +27,7 @@ module MakeMakefile
       end
     end
     srcs = []
+    $distcleandirs << File.join(srcdir, "target")
 
     dllib = target ? "$(TARGET).#{CONFIG['DLEXT']}" : ""
     mfile = open("Makefile", "wb")
@@ -61,12 +62,12 @@ TIMESTAMP_DIR = #{$extout ? '$(extout)/.timestamp' : '.'}
     install_dirs.each {|d| mfile.print("%-14s= %s\n" % d) if /^[[:upper:]]/ =~ d[0]}
     n = ($extout ? '$(RUBYARCHDIR)/' : '') + '$(TARGET)'
     mfile.print "
+CARGO_SO      = $(srcdir)/target/release/lib$(DLLIB)
+CARGO_MF      = $(srcdir)/Cargo.toml
+
 TARGET_SO     = #{($extout ? '$(RUBYARCHDIR)/' : '')}$(DLLIB)
 CLEANLIBS     = #{n}.#{CONFIG['DLEXT']} #{config_string('cleanlibs') {|t| t.gsub(/\$\*/) {n}}}
 CLEANOBJS     = *.#{$OBJEXT} #{config_string('cleanobjs') {|t| t.gsub(/\$\*/, "$(TARGET)#{deffile ? '-$(arch)': ''}")} if target} *.bak
-
-CARGO_SO      = $(srcdir)/target/release/lib$(DLLIB)
-CARGO_MF      = $(srcdir)/Cargo.toml
 
 all:    #{$extout ? "install" : target ? "$(DLLIB)" : "Makefile"}
 static: #{$extmk && !$static ? "all" : "$(STATIC_LIB)#{!$extmk ? " install-rb" : ""}"}

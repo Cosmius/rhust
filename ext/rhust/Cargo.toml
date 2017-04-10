@@ -5,6 +5,7 @@ authors = ["Cosmia Fu"]
 
 [dependencies]
 ruru = "*"
+lazy_static = "*"
 
 [lib]
 crate-type = ["dylib"]
